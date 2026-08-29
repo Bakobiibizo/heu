@@ -1,0 +1,13 @@
+## Conclusion
+
+We introduced the Hierarchical Excitable Unit (HEU), a continuous-time dynamical system for event commitment in temporal signals. The HEU combines evidence accumulation, threshold-based spike emission, and refractory suppression into a single system governed by four interpretable parameters.
+
+Our central contribution is a constructive impossibility result: we exhibited a temporal target that single-voice HEUs cannot represent regardless of parameter tuning. The target requires fast transient decay followed by stable sustain—dynamics that demand conflicting parameter settings. Single-voice optimization consistently saturates 3 of 4 parameters at their bounds while achieving 21× worse loss than a minimal two-voice architecture. The gap region, where the parameter conflict is most acute, shows 2888× improvement with two voices.
+
+The impossibility arises from parameter coupling: a single balance parameter trades off attack against recovery, preventing any configuration from achieving both fast decay and stable sustain. The two-voice architecture resolves this by assigning independent parameters to each temporal regime, with a simple max combination selecting the dominant voice.
+
+We validated the HEU through four experiments demonstrating tempo locking, multi-voice stability, successful parameter optimization for musical articulations, and the single-voice expressivity limit. We applied the HEU to polyphonic audio transcription, where the theoretical bottleneck manifests as note fragmentation (3–5× over-detection). Stabilizing the dynamics—through temporal upsampling or hysteresis—yields an order-of-magnitude F1 improvement on piano content.
+
+The HEU is not intended to compete with learned systems on transcription benchmarks. Its value is as a minimal, interpretable model that makes expressivity limits explicit. The finding that globally coupled parameters impose strict representational limits—and that independent dynamical state resolves them—may inform the design of more complex systems where such analysis is intractable.
+
+**Takeaway:** Excitable dynamics with a single state and globally coupled parameters have strict expressivity limits for temporal patterns with conflicting requirements. Adding independent state, even minimally, resolves the limit. This is not an asymptotic claim. It is a concrete, quantified separation demonstrated both in controlled experiments and practical application.

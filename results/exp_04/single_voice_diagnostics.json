@@ -1,0 +1,103 @@
+{
+  "report": {
+    "analysis_window_ms": [
+      0.0,
+      410.0
+    ],
+    "signal": {
+      "peak_value": 1.0,
+      "peak_time_ms": 3.0,
+      "auc": 318.1106663983214,
+      "mean_value": 0.7770271210200936,
+      "std_value": 0.3362082936292577,
+      "max_slope": 0.20546237655091695
+    },
+    "spikes": {
+      "spike_count": 2,
+      "spike_times_ms": [
+        0.0,
+        54.0
+      ],
+      "isi_ms": [
+        54.0
+      ],
+      "isi_mean_ms": 54.0,
+      "isi_cv": 0.0,
+      "min_isi_ms": 54.0
+    },
+    "timing": {
+      "expected_event_times_ms": [
+        0.0
+      ],
+      "timing_errors_ms": [
+        0.0
+      ],
+      "median_abs_error_ms": 0.0,
+      "mad_abs_error_ms": 0.0,
+      "max_abs_error_ms": 0.0,
+      "drift_slope_ms_per_s": null
+    },
+    "operating_point": {
+      "spike_threshold": 0.8,
+      "peak_minus_threshold": 0.19999999999999996,
+      "margin_ok": true,
+      "margin_target": 0.02
+    },
+    "quantization": {
+      "dt_ms": 1.0,
+      "unique_spike_time_steps": 2,
+      "quantization_suspected": false
+    },
+    "coupling": null
+  },
+  "invariants": [
+    {
+      "id": "INV_FINITE",
+      "description": "Envelope contains only finite values",
+      "passed": true,
+      "details": {
+        "finite": true
+      }
+    },
+    {
+      "id": "INV_NO_QUANTIZATION_ARTIFACT",
+      "description": "Spike times are not overly quantized (heuristic)",
+      "passed": true,
+      "details": {
+        "spike_count": 2,
+        "unique_steps": 2,
+        "dt_ms": 1.0
+      }
+    },
+    {
+      "id": "INV_TIMING_HAS_MATCHES",
+      "description": "Timing stats must match at least 50% of expected events",
+      "passed": true,
+      "details": {
+        "matched": 1,
+        "expected": 1
+      }
+    },
+    {
+      "id": "INV_MARGIN_OK",
+      "description": "Operating point margin meets configured target",
+      "passed": true,
+      "details": {
+        "peak": 1.0,
+        "threshold": 0.8,
+        "margin": 0.19999999999999996,
+        "target": 0.02
+      }
+    },
+    {
+      "id": "INV_SPIKE_COUNT_EXPECTED_RANGE",
+      "description": "Spike count within expected range",
+      "passed": true,
+      "details": {
+        "actual": 2,
+        "expected_min": 1,
+        "expected_max": 5
+      }
+    }
+  ]
+}

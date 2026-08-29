@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: uv sync --extra experiments --extra dev
+      - name: Compile
+        run: uv run python -m compileall -q hh_envelope hh_transcriber run.py docs/paper/generate_figures.py
+      - name: Test
+        run: uv run pytest -q

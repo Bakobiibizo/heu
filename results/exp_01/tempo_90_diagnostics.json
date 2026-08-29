@@ -1,0 +1,168 @@
+{
+  "report": {
+    "analysis_window_ms": [
+      0.0,
+      10000.0
+    ],
+    "signal": {
+      "peak_value": 0.8431586398214422,
+      "peak_time_ms": 666.0,
+      "auc": 26.916358131852167,
+      "mean_value": 0.00272960571892001,
+      "std_value": 0.03875192328206121,
+      "max_slope": 0.8431586398214422
+    },
+    "spikes": {
+      "spike_count": 14,
+      "spike_times_ms": [
+        666.0,
+        1333.0,
+        2000.0,
+        2666.0,
+        3333.0,
+        3999.0,
+        4666.0,
+        5333.0,
+        6000.0,
+        6666.0,
+        7333.0,
+        8000.0,
+        8666.0,
+        9333.0
+      ],
+      "isi_ms": [
+        667.0,
+        667.0,
+        666.0,
+        667.0,
+        666.0,
+        667.0,
+        667.0,
+        667.0,
+        666.0,
+        667.0,
+        667.0,
+        666.0,
+        667.0
+      ],
+      "isi_mean_ms": 666.6923076923077,
+      "isi_cv": 0.0006922810661118033,
+      "min_isi_ms": 666.0
+    },
+    "timing": {
+      "expected_event_times_ms": [
+        0.0,
+        666.6666666666666,
+        1333.3333333333333,
+        2000.0,
+        2666.6666666666665,
+        3333.333333333333,
+        3999.9999999999995,
+        4666.666666666666,
+        5333.333333333333,
+        6000.0,
+        6666.666666666667,
+        7333.333333333334,
+        8000.000000000001,
+        8666.666666666668,
+        9333.333333333334
+      ],
+      "timing_errors_ms": [
+        666.0,
+        666.3333333333334,
+        666.6666666666667,
+        666.0,
+        666.3333333333335,
+        665.666666666667,
+        666.0000000000005,
+        666.3333333333339,
+        666.666666666667,
+        666.0,
+        666.333333333333,
+        666.6666666666661,
+        665.9999999999991,
+        666.3333333333321
+      ],
+      "median_abs_error_ms": 666.3333333333326,
+      "mad_abs_error_ms": 0.3333333333325754,
+      "max_abs_error_ms": 666.666666666667,
+      "drift_slope_ms_per_s": 0.015384615384476464
+    },
+    "operating_point": {
+      "spike_threshold": 0.8,
+      "peak_minus_threshold": 0.04315863982144219,
+      "margin_ok": true,
+      "margin_target": 0.02
+    },
+    "quantization": {
+      "dt_ms": 1.0,
+      "unique_spike_time_steps": 14,
+      "quantization_suspected": false
+    },
+    "coupling": null
+  },
+  "invariants": [
+    {
+      "id": "INV_FINITE",
+      "description": "Envelope contains only finite values",
+      "passed": true,
+      "details": {
+        "finite": true
+      }
+    },
+    {
+      "id": "INV_NO_QUANTIZATION_ARTIFACT",
+      "description": "Spike times are not overly quantized (heuristic)",
+      "passed": true,
+      "details": {
+        "spike_count": 14,
+        "unique_steps": 14,
+        "dt_ms": 1.0
+      }
+    },
+    {
+      "id": "INV_TIMING_HAS_MATCHES",
+      "description": "Timing stats must match at least 50% of expected events",
+      "passed": true,
+      "details": {
+        "matched": 14,
+        "expected": 15
+      }
+    },
+    {
+      "id": "INV_MARGIN_OK",
+      "description": "Operating point margin meets configured target",
+      "passed": true,
+      "details": {
+        "peak": 0.8431586398214422,
+        "threshold": 0.8,
+        "margin": 0.04315863982144219,
+        "target": 0.02
+      }
+    },
+    {
+      "id": "INV_SPIKE_COUNT_EXPECTED_RANGE",
+      "description": "Spike count within expected range",
+      "passed": true,
+      "details": {
+        "actual": 14,
+        "expected_min": 14,
+        "expected_max": 16
+      }
+    },
+    {
+      "id": "INV_FALSE_POSITIVES_DURING_SILENCE",
+      "description": "No spikes during designated silence windows",
+      "passed": true,
+      "details": {
+        "false_positive_count": 0,
+        "silence_windows": [
+          [
+            100.0,
+            566.6666666666666
+          ]
+        ]
+      }
+    }
+  ]
+}

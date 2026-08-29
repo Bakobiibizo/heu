@@ -1,0 +1,191 @@
+{
+  "report": {
+    "analysis_window_ms": [
+      0.0,
+      10000.0
+    ],
+    "signal": {
+      "peak_value": 1.0,
+      "peak_time_ms": 0.0,
+      "auc": 39.10406638221192,
+      "mean_value": 0.003960406638221192,
+      "std_value": 0.0490667306958738,
+      "max_slope": 1.0
+    },
+    "spikes": {
+      "spike_count": 20,
+      "spike_times_ms": [
+        0.0,
+        500.0,
+        1000.0,
+        1500.0,
+        2000.0,
+        2500.0,
+        3000.0,
+        3500.0,
+        4000.0,
+        4500.0,
+        5000.0,
+        5500.0,
+        6000.0,
+        6500.0,
+        7000.0,
+        7500.0,
+        8000.0,
+        8500.0,
+        9000.0,
+        9500.0
+      ],
+      "isi_ms": [
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0,
+        500.0
+      ],
+      "isi_mean_ms": 500.0,
+      "isi_cv": 0.0,
+      "min_isi_ms": 500.0
+    },
+    "timing": {
+      "expected_event_times_ms": [
+        0.0,
+        500.0,
+        1000.0,
+        1500.0,
+        2000.0,
+        2500.0,
+        3000.0,
+        3500.0,
+        4000.0,
+        4500.0,
+        5000.0,
+        5500.0,
+        6000.0,
+        6500.0,
+        7000.0,
+        7500.0,
+        8000.0,
+        8500.0,
+        9000.0,
+        9500.0
+      ],
+      "timing_errors_ms": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "median_abs_error_ms": 0.0,
+      "mad_abs_error_ms": 0.0,
+      "max_abs_error_ms": 0.0,
+      "drift_slope_ms_per_s": 0.0
+    },
+    "operating_point": {
+      "spike_threshold": 0.8,
+      "peak_minus_threshold": 0.19999999999999996,
+      "margin_ok": true,
+      "margin_target": 0.02
+    },
+    "quantization": {
+      "dt_ms": 1.0,
+      "unique_spike_time_steps": 20,
+      "quantization_suspected": false
+    },
+    "coupling": null
+  },
+  "invariants": [
+    {
+      "id": "INV_FINITE",
+      "description": "Envelope contains only finite values",
+      "passed": true,
+      "details": {
+        "finite": true
+      }
+    },
+    {
+      "id": "INV_NO_QUANTIZATION_ARTIFACT",
+      "description": "Spike times are not overly quantized (heuristic)",
+      "passed": true,
+      "details": {
+        "spike_count": 20,
+        "unique_steps": 20,
+        "dt_ms": 1.0
+      }
+    },
+    {
+      "id": "INV_TIMING_HAS_MATCHES",
+      "description": "Timing stats must match at least 50% of expected events",
+      "passed": true,
+      "details": {
+        "matched": 20,
+        "expected": 20
+      }
+    },
+    {
+      "id": "INV_MARGIN_OK",
+      "description": "Operating point margin meets configured target",
+      "passed": true,
+      "details": {
+        "peak": 1.0,
+        "threshold": 0.8,
+        "margin": 0.19999999999999996,
+        "target": 0.02
+      }
+    },
+    {
+      "id": "INV_SPIKE_COUNT_EXPECTED_RANGE",
+      "description": "Spike count within expected range",
+      "passed": true,
+      "details": {
+        "actual": 20,
+        "expected_min": 19,
+        "expected_max": 21
+      }
+    },
+    {
+      "id": "INV_FALSE_POSITIVES_DURING_SILENCE",
+      "description": "No spikes during designated silence windows",
+      "passed": true,
+      "details": {
+        "false_positive_count": 0,
+        "silence_windows": [
+          [
+            100.0,
+            400.0
+          ]
+        ]
+      }
+    }
+  ]
+}

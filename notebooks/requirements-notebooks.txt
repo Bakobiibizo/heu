@@ -1,0 +1,15 @@
+# Requirements for running HH-Envelope notebooks
+# Install with: pip install -r notebooks/requirements-notebooks.txt
+
+# Core dependencies (also in pyproject.toml)
+numpy>=1.26
+matplotlib>=3.8
+pydantic>=2.0
+cma>=3.3
+
+# Notebook environment
+jupyter>=1.0
+ipykernel>=6.0
+
+# Audio playback in notebooks
+IPython>=8.0
