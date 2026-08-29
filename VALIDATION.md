@@ -10,10 +10,15 @@ Validated on 2026-08-29 against source revision `dc838469820431f796319d81f7cac0e
 | Python compilation | Pass | `python -m compileall -q hh_envelope hh_transcriber run.py docs/paper/generate_figures.py` |
 | Focused tests | Pass | `uv run pytest -q`: **38 passed** |
 | Package build | Pass | `uv build` produced an sdist and wheel |
+| Hosted CI | Pass | GitHub Actions run [`33256436641`](https://github.com/Bakobiibizo/heu/actions/runs/33256436641) completed compile and test jobs successfully |
 | Experiment 01 smoke run | Pass | Acceptance checks passed; PLV was 1.000 at 90, 120, and 140 BPM; all diagnostics were valid |
 | Paper figure generation | Pass with reproducibility note | All four figures regenerated from `results/exp_04/figure_data.npz` and `results/exp_05/figure_data.npz` |
 | Local documentation links | Pass | README and paper-local targets exist |
 | Credential scan | Pass within checked archive | No suspicious filenames or common key/token/password patterns were found outside ignored local tooling and build directories |
+
+## Hosted CI configuration finding
+
+An intermediate maintenance commit used the latest `astral-sh/setup-uv` major as a moving tag (`@v10`). GitHub Actions could not resolve that tag, so run [`33256410301`](https://github.com/Bakobiibizo/heu/actions/runs/33256410301) failed during action setup before repository code ran. Pinning the published release tag `@v10.0.1` corrected the configuration; the subsequent hosted compile and test run passed. The failed run remains available as primary evidence in the Actions history.
 
 ## Dependency compatibility finding
 
